@@ -11,6 +11,9 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+# Permalink settings
+permalink: pretty
+
 # Collections
 collections:
   gallery:
