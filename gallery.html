@@ -1,0 +1,22 @@
+---
+layout: default
+title: Gallery
+---
+
+<div class="gallery">
+    <h1>Zoopraxiscope</h1>
+    
+    <div class="zoopraxiscope" id="zoopraxiscope">
+        <div class="frame-container">
+            {% for image in site.data.gallery %}
+            <img src="{{ image.url | relative_url }}" alt="{{ image.alt }}" class="frame" data-index="{{ forloop.index0 }}">
+            {% endfor %}
+        </div>
+        
+        <div class="controls">
+            <button id="play-pause" aria-label="Play/Pause">▶</button>
+            <input type="range" id="speed-control" min="100" max="2000" value="500" aria-label="Speed control">
+            <span class="speed-label">Speed</span>
+        </div>
+    </div>
+</div>
