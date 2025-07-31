@@ -4,7 +4,9 @@
       "Bash(mkdir:*)",
       "Bash(git add:*)",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebFetch(domain:edhubbell.github.io)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }
