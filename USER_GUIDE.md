@@ -36,7 +36,7 @@ The CMS is already configured with your GitHub username (EdHubbell).
 ## Updating Content
 
 ### Method 1: Using Decap CMS (Recommended)
-1. Go to `https://[your-username].github.io/ewzineWebsite/admin/`
+1. Go to `https://[your-username].github.io/ewzineWebsite/admin.html`
 2. Log in with your GitHub account
 3. You'll see different content sections:
    - **Pages**: Edit home and about page content
