@@ -35,16 +35,16 @@ The CMS is already configured with your GitHub username (EdHubbell).
 
 ## Updating Content
 
-### Method 1: Using Decap CMS (Recommended)
-1. Go to `https://[your-username].github.io/ewzineWebsite/admin.html`
-2. Log in with your GitHub account
-3. You'll see different content sections:
-   - **Pages**: Edit home and about page content
-   - **FAQ**: Add, edit, or remove FAQ items
-   - **Gallery**: Upload and manage gallery images
+### Method 1: Direct GitHub Editing (Simplest)
+You can edit content directly on GitHub:
+- **About Page**: https://github.com/EdHubbell/ewzineWebsite/edit/main/_data/about.yml
+- **FAQ**: https://github.com/EdHubbell/ewzineWebsite/edit/main/_data/faq.yml  
+- **Gallery**: https://github.com/EdHubbell/ewzineWebsite/edit/main/_data/gallery.yml
 
-### Method 2: Direct GitHub Editing
-You can also edit files directly on GitHub:
+### Method 2: Using Decap CMS (Requires Netlify Setup)
+1. Go to `https://[your-username].github.io/ewzineWebsite/admin.html`
+2. Follow the setup instructions to configure authentication
+3. Once configured, you can edit content through a visual interface
 
 #### Update FAQ
 1. Go to `_data/faq.yml` in your repository

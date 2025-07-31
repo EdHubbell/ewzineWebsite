@@ -1,0 +1,82 @@
+---
+layout: null
+---
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager - Simple</title>
+  <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
+  <link href="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.css" rel="stylesheet" />
+</head>
+<body>
+  <script>
+    // Use test-repo backend for GitHub Pages without Netlify
+    CMS.init({
+      config: {
+        backend: {
+          name: 'test-repo',
+          // This allows editing without authentication - files must be edited via GitHub UI or PR
+        },
+        local_backend: true, // Enable local backend
+        media_folder: 'assets/images',
+        public_folder: '/assets/images',
+        collections: [
+          {
+            name: 'data',
+            label: 'Site Content',
+            files: [
+              {
+                name: 'about',
+                label: 'About Page',
+                file: '_data/about.yml',
+                fields: [
+                  { name: 'title', label: 'Page Title', widget: 'string' },
+                  { name: 'content', label: 'Content', widget: 'markdown' }
+                ]
+              },
+              {
+                name: 'faq',
+                label: 'FAQ',
+                file: '_data/faq.yml',
+                fields: [
+                  {
+                    name: 'faq',
+                    label: 'FAQ Items',
+                    widget: 'list',
+                    fields: [
+                      { name: 'question', label: 'Question', widget: 'string' },
+                      { name: 'answer', label: 'Answer', widget: 'markdown' }
+                    ]
+                  }
+                ]
+              },
+              {
+                name: 'gallery',
+                label: 'Gallery Images',
+                file: '_data/gallery.yml',
+                fields: [
+                  {
+                    name: 'gallery',
+                    label: 'Images',
+                    widget: 'list',
+                    fields: [
+                      { name: 'url', label: 'Image', widget: 'image' },
+                      { name: 'alt', label: 'Alt Text', widget: 'string' }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
+  
+  <div style="position: fixed; bottom: 20px; right: 20px; background: #000; color: #0f0; padding: 10px; border: 1px solid #0f0; font-family: monospace; font-size: 12px;">
+    Note: This is a read-only preview. To save changes, copy the YAML and update via GitHub.
+  </div>
+</body>
+</html>

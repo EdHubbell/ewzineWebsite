@@ -1,0 +1,147 @@
+---
+layout: null
+---
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: #000;
+      color: #0f0;
+      padding: 2rem;
+      margin: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .auth-section {
+      background: rgba(0, 255, 0, 0.1);
+      border: 1px solid #0f0;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    input[type="text"], input[type="password"] {
+      background: #000;
+      border: 1px solid #0f0;
+      color: #0f0;
+      padding: 0.5rem;
+      width: 100%;
+      margin: 0.5rem 0;
+      font-family: 'Courier New', monospace;
+    }
+    button {
+      background: transparent;
+      border: 1px solid #0f0;
+      color: #0f0;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-family: 'Courier New', monospace;
+      margin-top: 1rem;
+    }
+    button:hover {
+      background: #0f0;
+      color: #000;
+    }
+    .instructions {
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    a {
+      color: #0f0;
+    }
+    .error {
+      color: #f00;
+      margin-top: 1rem;
+    }
+    .success {
+      color: #0f0;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ew zine - Content Manager Setup</h1>
+    
+    <div class="instructions">
+      <h2>Option 1: Use Netlify for Authentication (Recommended)</h2>
+      <ol>
+        <li>Go to <a href="https://app.netlify.com" target="_blank">app.netlify.com</a> and create a free account</li>
+        <li>Click "Add new site" → "Import an existing project"</li>
+        <li>Choose GitHub and select your ewzineWebsite repository</li>
+        <li>Deploy settings: Leave everything as default and click "Deploy"</li>
+        <li>Once deployed, go to "Site configuration" → "Identity" → Enable Identity</li>
+        <li>Under "Registration", choose "Open" or "Invite only"</li>
+        <li>Under "External providers", add GitHub</li>
+        <li>Under "Services" → "Git Gateway", enable it</li>
+        <li>Visit your Netlify URL (e.g., https://your-site.netlify.app/admin.html)</li>
+      </ol>
+      
+      <h2>Option 2: Direct GitHub Editing</h2>
+      <p>For now, you can edit content directly on GitHub:</p>
+      <ul>
+        <li><a href="https://github.com/EdHubbell/ewzineWebsite/edit/main/_data/about.yml" target="_blank">Edit About Page</a></li>
+        <li><a href="https://github.com/EdHubbell/ewzineWebsite/edit/main/_data/faq.yml" target="_blank">Edit FAQ</a></li>
+        <li><a href="https://github.com/EdHubbell/ewzineWebsite/edit/main/_data/gallery.yml" target="_blank">Edit Gallery</a></li>
+      </ul>
+      
+      <h2>Option 3: Use GitHub Personal Access Token</h2>
+      <div class="auth-section">
+        <p>Create a Personal Access Token:</p>
+        <ol>
+          <li>Go to GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)</li>
+          <li>Click "Generate new token (classic)"</li>
+          <li>Give it a name like "ewzine CMS"</li>
+          <li>Select scope: "repo" (full control of private repositories)</li>
+          <li>Click "Generate token" and copy it</li>
+        </ol>
+        <input type="password" id="token" placeholder="Paste your GitHub Personal Access Token here">
+        <button onclick="saveToken()">Save Token (Local Storage)</button>
+        <div id="status"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function saveToken() {
+      const token = document.getElementById('token').value;
+      const status = document.getElementById('status');
+      
+      if (!token) {
+        status.innerHTML = '<div class="error">Please enter a token</div>';
+        return;
+      }
+      
+      // Test the token
+      fetch('https://api.github.com/user', {
+        headers: {
+          'Authorization': `token ${token}`
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          localStorage.setItem('github_token', token);
+          status.innerHTML = '<div class="success">Token saved! Redirecting to CMS...</div>';
+          setTimeout(() => {
+            window.location.href = '/ewzineWebsite/admin-pat.html';
+          }, 2000);
+        } else {
+          status.innerHTML = '<div class="error">Invalid token. Please check and try again.</div>';
+        }
+      })
+      .catch(error => {
+        status.innerHTML = '<div class="error">Error testing token: ' + error.message + '</div>';
+      });
+    }
+  </script>
+</body>
+</html>
