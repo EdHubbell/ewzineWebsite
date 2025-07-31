@@ -15,17 +15,23 @@ This website is built with Jekyll and uses Decap CMS for easy content management
 7. Your site will be available at: `https://[your-username].github.io/ewzineWebsite/`
 
 ### 2. Configure Decap CMS
-1. Edit `admin/config.js` and update line 4:
-   - Replace `YOUR_GITHUB_USERNAME` with your actual GitHub username
-2. Commit and push this change
+The CMS is already configured with your GitHub username (EdHubbell).
 
-### 3. Set up CMS Authentication
+### 3. Set up CMS Authentication (Choose one method)
+
+#### Method A: Simple GitHub OAuth (Recommended)
+1. The CMS will use GitHub's built-in authentication
+2. When you visit `/admin/`, you'll be prompted to authorize with GitHub
+3. Make sure you're logged into GitHub first
+
+#### Method B: Netlify Identity (More features, but requires setup)
 1. Go to https://app.netlify.com and sign up for a free account
-2. Click "New site from Git" but DON'T actually create a site
+2. Create a new site from Git and connect your repository
 3. Go to "Site settings" → "Identity" → "Enable Identity"
-4. Under "Registration", select "Invite only"
+4. Under "Registration", select "Open" or "Invite only"
 5. Under "External providers", add "GitHub"
-6. Under "Git Gateway", enable it
+6. Under "Services" → "Git Gateway", enable it
+7. Visit your Netlify site URL once to initialize it
 
 ## Updating Content
 
@@ -114,9 +120,12 @@ bundle exec jekyll serve
 - Check for build errors in Actions tab
 
 ### CMS not working?
-- Ensure you've updated the GitHub username in `admin/config.js`
-- Check you're logged into GitHub
-- Try clearing browser cache
+- Make sure GitHub Pages is enabled and the site is deployed
+- Clear your browser cache and cookies
+- Try accessing in an incognito/private window
+- If using GitHub OAuth, ensure you're logged into GitHub first
+- Check the browser console for error messages
+- For authentication issues, you may need to set up Netlify Identity (see setup instructions)
 
 ### Images not displaying?
 - Verify image paths start with `/assets/images/`

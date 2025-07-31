@@ -1,0 +1,10 @@
+# This file is for GitHub OAuth with Decap CMS
+# You don't need Netlify hosting, just their Identity service
+
+[build]
+  publish = "_site"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200

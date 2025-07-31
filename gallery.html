@@ -8,7 +8,7 @@ title: Gallery
     
     <div class="zoopraxiscope" id="zoopraxiscope">
         <div class="frame-container">
-            {% for image in site.data.gallery %}
+            {% for image in site.data.gallery.gallery %}
             <img src="{{ image.url | relative_url }}" alt="{{ image.alt }}" class="frame" data-index="{{ forloop.index0 }}">
             {% endfor %}
         </div>

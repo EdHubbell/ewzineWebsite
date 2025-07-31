@@ -1,14 +1,15 @@
-- question: "What is ew?"
-  answer: "ew is a printed zine that explores the intersection of art and environmental consciousness through visual art, writing, and creative expression."
+faq:
+  - question: "What is ew?"
+    answer: "ew is a printed zine that explores the intersection of art and environmental consciousness through visual art, writing, and creative expression."
 
-- question: "How often is ew published?"
-  answer: "ew is published quarterly, with new issues released in March, June, September, and December."
+  - question: "How often is ew published?"
+    answer: "ew is published quarterly, with new issues released in March, June, September, and December."
 
-- question: "Where can I get a physical copy?"
-  answer: "Physical copies are available at select independent bookstores and through our online shop. Check our social media for stockist updates."
+  - question: "Where can I get a physical copy?"
+    answer: "Physical copies are available at select independent bookstores and through our online shop. Check our social media for stockist updates."
 
-- question: "Can I submit work to ew?"
-  answer: "Yes! We accept submissions on a rolling basis. Please send your work and a brief artist statement to our submission email."
+  - question: "Can I submit work to ew?"
+    answer: "Yes! We accept submissions on a rolling basis. Please send your work and a brief artist statement to our submission email."
 
-- question: "What kind of content does ew feature?"
-  answer: "We feature visual art, poetry, essays, interviews, and experimental works that engage with environmental themes in creative and thought-provoking ways."
+  - question: "What kind of content does ew feature?"
+    answer: "We feature visual art, poetry, essays, interviews, and experimental works that engage with environmental themes in creative and thought-provoking ways."
