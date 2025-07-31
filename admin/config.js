@@ -2,7 +2,7 @@
 const config = {
   backend: {
     name: 'github',
-    repo: 'YOUR_GITHUB_USERNAME/ewzineWebsite', // Update this with your GitHub username
+    repo: 'EdHubbell/ewzineWebsite', // Update this with your GitHub username
     branch: 'main',
   },
   media_folder: 'assets/images',
