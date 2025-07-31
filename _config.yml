@@ -2,7 +2,7 @@
 title: ew zine
 description: Art and Environment
 email: 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/ewzineWebsite" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
 # Build settings
