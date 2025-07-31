@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: EdHubbell/ewzineWebsite
+  repo: theo1hubbell/ewzineWebsite
   branch: main
 
 media_folder: assets/images
