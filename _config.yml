@@ -18,6 +18,14 @@ collections:
   faq:
     output: false
 
+# Include in processing
+include:
+  - admin
+
+# Keep files from being cleaned
+keep_files:
+  - admin
+
 # Exclude from processing
 exclude:
   - Gemfile
@@ -27,7 +35,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - admin/
 
 # Defaults
 defaults:
